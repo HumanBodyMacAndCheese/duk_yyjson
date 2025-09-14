@@ -16,21 +16,7 @@ duk_ret_t duk_fastjson_parse(duk_context* ctx);
 // duk_ret_t duk_fastjson_stringify(duk_context* ctx);
 
 // Initialize the library 
-static void duk_fastjson_init(duk_context* ctx) {
-	// Replace method JSON.parse and JSON.stringify with our shiny, new methods
-	duk_get_global_string(ctx, "JSON");
-	
-	duk_push_c_function(ctx, duk_fastjson_parse, 1);
-	duk_put_prop_string(ctx, -2, "parse");
-	
-	/*
-	
-	duk_push_c_function(ctx, duk_fastjson_stringify, 1);
-	duk_put_prop_string(ctx, -2, "stringify"); 
-	
-	*/
-	
-}
+void duk_fastjson_init(duk_context* ctx);
 
 #ifdef _cplusplus
 }
