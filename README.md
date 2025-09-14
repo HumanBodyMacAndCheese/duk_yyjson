@@ -56,7 +56,7 @@ Ditto, but with mimalloc* integrated into Duktape's default memory allocation fu
 |-------------|-------------------|--------------|
 | 101.2 MB/s  | 259.0 MB/s        | 229.3 MB/s   |
 
-* https://github.com/microsoft/mimalloc
+\* https://github.com/microsoft/mimalloc
 
 # Why Duktape?
 It's incredibly easy to integrate and JavaScript is a popular language. As what one guy said, I'm not trying to script my toaster, although you are free to modify the files at will to make them suitable for your toaster. They're less than 200 lines of code, get your hands dirty! 
