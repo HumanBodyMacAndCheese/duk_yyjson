@@ -6,7 +6,7 @@ Simply drop the two files in with your build system and call the required method
 ```cpp
 #include "duktape.h"
 
-#include "duk_fastjson.h"    // Was originally going to have an simdjson backend as well, but I scrapped that for yyjson only
+#include "duk_fastjson.h"    // Was originally going to have a simdjson backend as well, but I scrapped that for yyjson only
 
 // A minimal template for a program with this library
 int main(void) {
@@ -31,7 +31,7 @@ int main(void) {
 }
 
 ```
-
+Call JSON.parse from your code without changing a single line. 
 ```javascript
 // Trivial example with a trivial replacment. 
 const RESULT = JSON.parse("{\"answer\" : 42}");
@@ -40,18 +40,21 @@ console.log(RESULT["answer"]);    // -> 42
 ```
 
 # Blazingly-fast performance... almost.
-Even though the backend uses the fastest JSON library written in C, it still deals with the significant overhead when pushing all values to Duktape. 
 
-GCC (15.2.0, Windows x86_64 using MSYS2) 
-Average out of 500 runs with -O3 for JSON.parse(): 
+Even though the backend uses the fastest JSON library written in C, it still deals with the significant overhead when pushing all values to Duktape.
 
-| canada.json | citm_catalog.json | twitter.json |
-| 75.8 MB/s | 203.0 MB/s | 175.2 MB/s |
-
-Ditto, but with mimalloc integrated into Duktape's default memory allocation functions: 
+GCC (15.2.0, Windows x86_64 using MSYS2)  
+Average out of 500 runs with `-O3` for `JSON.parse()`:
 
 | canada.json | citm_catalog.json | twitter.json |
-| 101.2 MB/s | 259.0 MB/s | 229.3 MB/s |
+|-------------|-------------------|--------------|
+| 75.8 MB/s   | 203.0 MB/s        | 175.2 MB/s   |
+
+Ditto, but with mimalloc integrated into Duktape's default memory allocation functions:
+
+| canada.json | citm_catalog.json | twitter.json |
+|-------------|-------------------|--------------|
+| 101.2 MB/s  | 259.0 MB/s        | 229.3 MB/s   |
 
 # Why Duktape?
 It's incredibly easy to integrate and JavaScript is a popular language. As what one guy said, I'm not trying to script my toaster, although you are free to modify the files at will. They're less than 200 lines of code, get your hands dirty! 
