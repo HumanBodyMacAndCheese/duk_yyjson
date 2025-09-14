@@ -33,7 +33,7 @@ int main(void) {
 ```
 Call JSON.parse from your code without changing a single line. 
 ```javascript
-// Trivial example with a trivial replacment. 
+// Trivial example with a trivial replacement. 
 const RESULT = JSON.parse("{\"answer\" : 42}");
 console.log(RESULT["answer"]);    // -> 42
 
