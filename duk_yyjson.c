@@ -82,8 +82,6 @@ duk_ret_t duk_yyjson_parse(duk_context* ctx) {
 	yyjson_val* root = yyjson_doc_get_root(doc);
 	
 	if (!doc) {
-		// return duk_error(ctx, DUK_ERR_SYNTAX_ERROR, "JSON.parse: %s at position %zu", err.msg, err.pos);
-
 		const char *msg = err.msg ? err.msg : "invalid JSON";
 	
 		if (err.pos > 0) {
@@ -162,4 +160,5 @@ void duk_yyjson_init(duk_context* ctx) {
 	
 	*/
 	
+
 }
