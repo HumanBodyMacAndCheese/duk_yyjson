@@ -6,7 +6,7 @@ Simply drop the two files in with your build system and call the required method
 ```cpp
 #include "duktape.h"
 
-#include "duk_yyjson.h"    // Was originally going to have a simdjson backend as well, but I scrapped that for yyjson only
+#include "duk_yyjson.h" 
 
 // A minimal template for a program with this library
 int main(void) {
