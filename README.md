@@ -48,7 +48,7 @@ Average out of 500 runs with `-O3` for `JSON.parse()`:
 
 | canada.json | citm_catalog.json | twitter.json | 40mb.json** |
 |-------------|-------------------|--------------|-------------|
-| 75.8 MB/s   | 203.0 MB/s        | 175.2 MB/s   | 61.1 MB/s   |
+| 75.8 MB/s   | 203.0 MB/s        | 175.2 MB/s   | 76.3 MB/s   |
 
 Ditto, but with mimalloc* integrated into Duktape's default memory allocation functions:
 
