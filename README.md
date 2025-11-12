@@ -54,7 +54,7 @@ Ditto, but with mimalloc* integrated into Duktape's default memory allocation fu
 
 | canada.json | citm_catalog.json | twitter.json | 40mb.json**   |
 |-------------|-------------------|--------------|---------------|
-| 101.2 MB/s  | 259.0 MB/s        | 229.3 MB/s   | 105.66 MB/s   |
+| 101.2 MB/s  | 259.0 MB/s        | 229.3 MB/s   | 105.7 MB/s   |
 
 \* https://github.com/microsoft/mimalloc
 \** https://examplefile.com/code/json/40-mb-json
