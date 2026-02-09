@@ -19,4 +19,5 @@ void duk_yyjson_init(duk_context* ctx);
 }
 #endif 
 
-#endif		// DUKTAPE_YYJSON_H
+#endif		// DUK_YYJSON_H
+
