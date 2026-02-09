@@ -5,6 +5,8 @@
 #include <stdbool.h>		// Booleans "true" and "false" 
 #include <stddef.h>		// Required for size_t 
 
+
+
 /*
 
 WARNING: This is a recursive function and may cause a stack overflow if your JSON objects are too deep. Anyways, it translates the JSON object from C to Duktape 
@@ -102,63 +104,11 @@ duk_ret_t duk_yyjson_parse(duk_context* ctx) {
 	
 }
 
-/*
-
-CURRENTLY UNUSED SINCE IT'S A WORK IN PROGRESS 
-
-*/
-duk_ret_t duk_yyjson_stringify(duk_context* ctx) {
-	/*
-	
-	const int tt = duk_get_type(ctx, 0);
-	
-	switch (tt) {
-		case DUK_TYPE_NONE:
-			duk_push_string(ctx, "undefined");
-			break;
-		
-		case DUK_TYPE_BUFFER:
-		{
-			size_t i = 0;
-		
-		}
-			break;
-			
-		case DUK_TYPE_POINTER:
-			break;
-			
-		case DUK_TYPE_LIGHTFUNC:
-			break; 
-		
-		default: 
-		{
-			const char* result = duk_to_string(ctx, 0);
-			duk_push_lstring(ctx, result, strlen(result));
-		
-		}
-		break;
-	
-	};
-	
-	*/
-	
-	return 1; 
-	
-}
-
 void duk_yyjson_init(duk_context* ctx) {
-	// Replace method JSON.parse and JSON.stringify with our shiny, new methods
+	// Replace method JSON.parse and JSON.stringify with our shiny, new method
 	duk_get_global_string(ctx, "JSON");
 	
 	duk_push_c_function(ctx, duk_yyjson_parse, 1);
 	duk_put_prop_string(ctx, -2, "parse");
 	
-	/*
-	
-	duk_push_c_function(ctx, duk_fastjson_stringify, 1);
-	duk_put_prop_string(ctx, -2, "stringify"); 
-	
-	*/
-	
-
 }
