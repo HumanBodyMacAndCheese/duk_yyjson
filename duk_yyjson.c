@@ -5,11 +5,9 @@
 #include <stdbool.h>		// Booleans "true" and "false" 
 #include <stddef.h>		// Required for size_t 
 
-
-
 /*
 
-WARNING: This is a recursive function and may cause a stack overflow if your JSON objects are too deep. Anyways, it translates the JSON object from C to Duktape 
+WARNING: This is a recursive function and may cause a stack overflow if your JSON objects are too deep. 
 
 */
 static void translate(duk_context* ctx, yyjson_val* obj) {
@@ -111,4 +109,5 @@ void duk_yyjson_init(duk_context* ctx) {
 	duk_push_c_function(ctx, duk_yyjson_parse, 1);
 	duk_put_prop_string(ctx, -2, "parse");
 	
+
 }
