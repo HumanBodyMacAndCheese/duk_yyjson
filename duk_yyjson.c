@@ -103,7 +103,7 @@ duk_ret_t duk_yyjson_parse(duk_context* ctx) {
 }
 
 void duk_yyjson_init(duk_context* ctx) {
-	// Replace method JSON.parse and JSON.stringify with our shiny, new method
+	// Replace method JSON.parse with our shiny, new method
 	duk_get_global_string(ctx, "JSON");
 	
 	duk_push_c_function(ctx, duk_yyjson_parse, 1);
