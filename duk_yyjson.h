@@ -9,7 +9,7 @@
 extern "C" {
 #endif
 
-// Replace JSON.parse with the fast backend. You must define it by either compiling the corresponding C/C++ file in with your project 
+// Replace JSON.parse 
 duk_ret_t duk_yyjson_parse(duk_context* ctx);
 
 // Initialize the library 
